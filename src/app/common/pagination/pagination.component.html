@@ -1,0 +1,23 @@
+<div class="pagination">
+  <div class="page-count">
+    <span class="per-page">Number of Rows per page</span>
+    <select  [(ngModel)]="rowsPerPage" (change)="onRowsPerPageChange()">
+      <option *ngFor="let option of rowOptions" [value]="option">{{option}}</option>
+    </select>
+  </div>
+
+  <ul class="page-list">
+    <li (click)="moveToStartPage()">
+      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+    </li>
+    <li (click)="prevPageItemClick()">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </li>
+    <li *ngFor="let list of currentPageList;"
+        [ngClass]="list == pageList[currentPage - 1] ? 'activeItem' : ''" (click)="pageClick(list)">{{list}}</li>
+    <li (click)="nextPageItemClick()">
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </li>
+    <li (click)="moveToLastPage()"><i class="fa fa-angle-double-right" aria-hidden="true"></i></li>
+  </ul>
+</div>

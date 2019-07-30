@@ -1,0 +1,35 @@
+.pagination {
+  .page-count{
+    padding: 10px 0;
+    text-align: center;
+    .per-page{
+      margin-right: 10px;
+      font-weight: bold;
+    }
+  }
+  .page-list {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    li {
+      list-style-type: none;
+      padding: 5px 8px;
+      border: 1px solid black;
+      border-right: 0px;
+      cursor: pointer;
+      &:nth-child(1){
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+      &:nth-last-child(1){
+        border-right: 1px solid;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      &.activeItem{
+        background: #0bedef;
+      }
+    }
+
+  }
+}
